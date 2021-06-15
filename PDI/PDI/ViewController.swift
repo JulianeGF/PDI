@@ -1,19 +1,41 @@
-//
-//  ViewController.swift
-//  PDI
-//
-//  Created by developer on 02/06/21.
-//
-
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
+    
+    override func loadView() {
+        self.view = View.init(frame: UIScreen.main.bounds)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
+class View: UIView {
+    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .cyan
+        return collectionView
+    }()
+    
+    public func set() {
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(25)
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .blue
+        set()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
