@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  PDI
-//
-//  Created by developer on 02/06/21.
-//
-
 import UIKit
 
 @UIApplicationMain

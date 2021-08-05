@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B75699326791C25009FDEBB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B75699226791C25009FDEBB /* SnapKit */; };
+		8B756996267A7CD5009FDEBB /* PokemonAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 8B756995267A7CD5009FDEBB /* PokemonAPI */; };
+		8B756999267A7CFF009FDEBB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B756998267A7CFF009FDEBB /* Alamofire */; };
+		8B75699B267A8050009FDEBB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B75699A267A8050009FDEBB /* ViewModel.swift */; };
 		8B7E422E2667F965003C9CDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E422D2667F965003C9CDC /* AppDelegate.swift */; };
 		8B7E42322667F965003C9CDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E42312667F965003C9CDC /* ViewController.swift */; };
 		8B7E42372667F967003C9CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E42362667F967003C9CDC /* Assets.xcassets */; };
@@ -15,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B75699A267A8050009FDEBB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8B7E422A2667F965003C9CDC /* PDI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7E422D2667F965003C9CDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B7E42312667F965003C9CDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +32,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B756999267A7CFF009FDEBB /* Alamofire in Frameworks */,
 				8B75699326791C25009FDEBB /* SnapKit in Frameworks */,
+				8B756996267A7CD5009FDEBB /* PokemonAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,7 @@
 			children = (
 				8B7E422D2667F965003C9CDC /* AppDelegate.swift */,
 				8B7E42312667F965003C9CDC /* ViewController.swift */,
+				8B75699A267A8050009FDEBB /* ViewModel.swift */,
 				8B7E42362667F967003C9CDC /* Assets.xcassets */,
 				8B7E42382667F967003C9CDC /* LaunchScreen.storyboard */,
 				8B7E423B2667F967003C9CDC /* Info.plist */,
@@ -81,6 +88,8 @@
 			name = PDI;
 			packageProductDependencies = (
 				8B75699226791C25009FDEBB /* SnapKit */,
+				8B756995267A7CD5009FDEBB /* PokemonAPI */,
+				8B756998267A7CFF009FDEBB /* Alamofire */,
 			);
 			productName = PDI;
 			productReference = 8B7E422A2667F965003C9CDC /* PDI.app */;
@@ -111,6 +120,8 @@
 			mainGroup = 8B7E42212667F965003C9CDC;
 			packageReferences = (
 				8B75699126791C25009FDEBB /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8B756994267A7CD5009FDEBB /* XCRemoteSwiftPackageReference "PokemonAPI" */,
+				8B756997267A7CFF009FDEBB /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8B7E422B2667F965003C9CDC /* Products */;
 			projectDirPath = "";
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B7E42322667F965003C9CDC /* ViewController.swift in Sources */,
+				8B75699B267A8050009FDEBB /* ViewModel.swift in Sources */,
 				8B7E422E2667F965003C9CDC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +355,22 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		8B756994267A7CD5009FDEBB /* XCRemoteSwiftPackageReference "PokemonAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kinkofer/PokemonAPI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.2;
+			};
+		};
+		8B756997267A7CFF009FDEBB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -350,6 +378,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B75699126791C25009FDEBB /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8B756995267A7CD5009FDEBB /* PokemonAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B756994267A7CD5009FDEBB /* XCRemoteSwiftPackageReference "PokemonAPI" */;
+			productName = PokemonAPI;
+		};
+		8B756998267A7CFF009FDEBB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B756997267A7CFF009FDEBB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

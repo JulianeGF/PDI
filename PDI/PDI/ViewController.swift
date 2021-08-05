@@ -1,5 +1,6 @@
 import UIKit
 import SnapKit
+import PokemonAPI
 
 class ViewController: UIViewController {
     
