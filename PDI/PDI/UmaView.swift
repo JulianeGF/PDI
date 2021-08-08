@@ -1,14 +1,11 @@
-import UIKit
+import Foundation
 import SnapKit
+import UIKit
 
-class ViewController: UIViewController {
-    
-    override func loadView() {
-        self.view = View.init(frame: UIScreen.main.bounds)
-    }
-}
 
-class View: UIView {
+
+class UmaView: UIView {
+
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -20,15 +17,14 @@ class View: UIView {
     public func set() {
         addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-           make.edges.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         set()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
