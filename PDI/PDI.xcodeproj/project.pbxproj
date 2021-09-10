@@ -14,6 +14,7 @@
 		8B7E42322667F965003C9CDC /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E42312667F965003C9CDC /* CollectionViewController.swift */; };
 		8B7E42372667F967003C9CDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E42362667F967003C9CDC /* Assets.xcassets */; };
 		8B7E423A2667F967003C9CDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E42382667F967003C9CDC /* LaunchScreen.storyboard */; };
+		8BE4682626CAE3C80032C16F /* CookieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE4682526CAE3C80032C16F /* CookieManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8B7E42362667F967003C9CDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B7E42392667F967003C9CDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B7E423B2667F967003C9CDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BE4682526CAE3C80032C16F /* CookieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				8B7E42362667F967003C9CDC /* Assets.xcassets */,
 				8B7E42382667F967003C9CDC /* LaunchScreen.storyboard */,
 				8B7E423B2667F967003C9CDC /* Info.plist */,
+				8BE4682526CAE3C80032C16F /* CookieManager.swift */,
 			);
 			path = PDI;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B47848426C0A5A4000D6FDA /* CollectionViewCell.swift in Sources */,
+				8BE4682626CAE3C80032C16F /* CookieManager.swift in Sources */,
 				8B7E42322667F965003C9CDC /* CollectionViewController.swift in Sources */,
 				8B7E422E2667F965003C9CDC /* AppDelegate.swift in Sources */,
 			);
