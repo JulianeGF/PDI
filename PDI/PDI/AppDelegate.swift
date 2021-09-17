@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,7 +10,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = ViewController()
         self.window?.makeKeyAndVisible()
+        setCookie(name: "app-id", value: "elo7")
+        setCookie(name: "app-version", value: "3.0.0")
+        setCookie(name: "app-platform", value: "ios")
         return true
+    }
+    
+    func setCookie(name: String, value: String) {
+        let cookieProps = [
+            HTTPCookiePropertyKey.domain: "www.elo7.com.br",
+            HTTPCookiePropertyKey.path: "/",
+            HTTPCookiePropertyKey.name: name,
+            HTTPCookiePropertyKey.value: value
+        ]
+        if let cookie = HTTPCookie(properties: cookieProps) {
+            AF.session.configuration.httpCookieStorage?.setCookie(cookie)
+        }
     }
 }
 
