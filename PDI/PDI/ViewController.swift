@@ -9,8 +9,10 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        AF.request("https://www.elo7.com.br/categoria/acessorios").responseString { response in
-            print(response)
+        AF.request("https://www.elo7.com.br/categoria").responseJSON { response in
+            if let categoryScreen = try? JSONDecoder().decode(CategoryScreenModel.self, from: response.data!) {
+                print("farofa")
+            }
         }
     }
 }
@@ -40,4 +42,3 @@ class View: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

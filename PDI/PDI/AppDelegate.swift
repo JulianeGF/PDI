@@ -7,12 +7,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = ViewController()
-        self.window?.makeKeyAndVisible()
         setCookie(name: "app-id", value: "elo7")
         setCookie(name: "app-version", value: "3.0.0")
         setCookie(name: "app-platform", value: "ios")
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = ViewController()
+        self.window?.makeKeyAndVisible()
         return true
     }
     
@@ -28,4 +28,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
