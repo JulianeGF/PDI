@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
 }
 
-class View: UIView {
+class View: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -31,6 +31,14 @@ class View: UIView {
         collectionView.snp.makeConstraints { make in
            make.edges.equalToSuperview()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return 
     }
     
     override init(frame: CGRect) {
