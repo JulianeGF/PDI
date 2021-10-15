@@ -5,7 +5,7 @@ import Alamofire
 class ViewController: UIViewController {
     
     override func loadView() {
-        self.view = View.init(frame: UIScreen.main.bounds)
+        self.view = CollectionView.init(frame: UIScreen.main.bounds)
     }
     
     override func viewDidLoad() {
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
 }
 
-class View: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
+class CollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -38,7 +38,9 @@ class View: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return 
+        let cell = CollectionViewCell()
+        cell.render()
+        return cell
     }
     
     override init(frame: CGRect) {

@@ -6,9 +6,8 @@ class CollectionViewCell: UICollectionViewCell, Reusable {
         super.prepareForReuse()
     }
     
-    func render(category: CategoryModel) {
-        
+    func render() {
+        let view = CellView(frame: frame)
+        contentView.addSubview(view)
     }
-    
-    
 }
