@@ -72,10 +72,10 @@
 				8B7E422D2667F965003C9CDC /* AppDelegate.swift */,
 				8B73449F2707460C00C597C9 /* CollectionViewCell.swift */,
 				8B7E42312667F965003C9CDC /* ViewController.swift */,
+				8B7344A427074A5D00C597C9 /* CellView.swift */,
 				8B7E42362667F967003C9CDC /* Assets.xcassets */,
 				8B7E42382667F967003C9CDC /* LaunchScreen.storyboard */,
 				8B7E423B2667F967003C9CDC /* Info.plist */,
-				8B7344A427074A5D00C597C9 /* CellView.swift */,
 			);
 			path = PDI;
 			sourceTree = "<group>";

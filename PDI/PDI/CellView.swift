@@ -9,7 +9,6 @@ class CellView: UIView {
         label.adjustsFontForContentSizeCategory = true
         label.textColor = .darkGray
         label.numberOfLines = 0
-        label.text = "xablau"
         return label
     }()
     
@@ -22,13 +21,10 @@ class CellView: UIView {
             make.top.leading.equalToSuperview()
         }
     }
-        
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubviews()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func render(subCategory: CategoryModel) {
+        addSubviews()
+        constraintLayout()
+        textView.text = subCategory.label
     }
 }
