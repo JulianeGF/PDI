@@ -6,11 +6,10 @@ class ViewController: UIViewController {
     private var model: CategoryScreenModel?
     
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
+        let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: listLayout)
         collectionView.register(cellType: CollectionViewCell.self)
-        collectionView.backgroundColor = .lightGray
         collectionView.dataSource = self
         collectionView.delegate = self
         return collectionView
