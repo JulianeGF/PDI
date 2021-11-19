@@ -1,5 +1,6 @@
 import UIKit
 import Reusable
+import SnapKit
 
 class CollectionViewCell: UICollectionViewCell, Reusable {
     override func prepareForReuse() {
@@ -12,5 +13,10 @@ class CollectionViewCell: UICollectionViewCell, Reusable {
         let view = CellView()
         view.render(subCategory: subCategory)
         contentView.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
     }
 }

@@ -12,13 +12,25 @@ class CellView: UIView {
         return label
     }()
     
+    private lazy var border: UIView = {
+        let view = UIView()
+        view.backgroundColor = .darkGray
+        return view
+    }()
+    
     private func addSubviews() {
         addSubview(textView)
+        addSubview(border)
     }
     
     private func constraintLayout() {
         textView.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview()
+            make.edges.equalToSuperview()
+        }
+        
+        border.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(0.2)
         }
     }
     

@@ -4,11 +4,12 @@ import Alamofire
 
 class ViewController: UIViewController {
     private var model: CategoryScreenModel?
+    private let client = Client()
     
     private lazy var collectionView: UICollectionView = {
-        let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        let listLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
-        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: listLayout)
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 40)
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.register(cellType: CollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -21,12 +22,13 @@ class ViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
-        AF.request("https://www.elo7.com.br/categoria").responseJSON { response in
-            if let categoryScreen = try? JSONDecoder().decode(CategoryScreenModel.self, from: response.data!) {
-                self.model = categoryScreen
-                self.collectionView.reloadData()
-            }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        client.requestCategories(url: "https://www.elo7.com.br/categoria") { screenModel in
+            self.model = screenModel
+            self.collectionView.reloadData()
         }
     }
 }
