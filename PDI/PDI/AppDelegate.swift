@@ -10,8 +10,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setCookie(name: "app-id", value: "elo7")
         setCookie(name: "app-version", value: "3.0.0")
         setCookie(name: "app-platform", value: "ios")
+        let viewController = ViewController(url: "https://www.elo7.com.br/categoria")
+        let navigationController = UINavigationController(rootViewController: viewController)
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = ViewController()
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
         return true
     }

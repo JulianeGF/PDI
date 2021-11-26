@@ -5,6 +5,7 @@ import Alamofire
 class ViewController: UIViewController {
     private var model: CategoryScreenModel?
     private let client = Client()
+    private let url: String
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -16,17 +17,30 @@ class ViewController: UIViewController {
         return collectionView
     }()
     
+    init(url: String) {
+        self.url = url
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCategoriesCollectionView()
+        requestContent()
+    }
+    
+    private func setupCategoriesCollectionView() {
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        client.requestCategories(url: "https://www.elo7.com.br/categoria") { screenModel in
+    private func requestContent() {
+        client.requestCategories(url: url) { screenModel in
             self.model = screenModel
             self.collectionView.reloadData()
         }
@@ -42,5 +56,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let cell: CollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.render(subCategory: model?.subCategories[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let categoryUrl = model?.subCategories[indexPath.item].link.href else { return }
+        self.navigationController?.pushViewController(ViewController(url: categoryUrl.replacingOccurrences(of: "elo7://", with: "https://")), animated: true)
     }
 }
